@@ -1,0 +1,11 @@
+OkHttpClient client = new OkHttpClient();
+
+Request request = new Request.Builder()
+  .url("https://postman-echo.com/headers")
+  .get()
+  .addHeader("my-sample-header", "Lorem ipsum dolor sit amet")
+  .addHeader("cache-control", "no-cache")
+  .addHeader("postman-token", "efd584de-8e9f-fccb-c42f-e29b6e79f2a0")
+  .build();
+
+Response response = client.newCall(request).execute();
